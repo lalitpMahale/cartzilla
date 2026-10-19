@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cartzilla</title>
+
+
+  <!-- bootrap css -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/index.css">
+
+
+</head>
+
+<body>
+  <!-- navigation bar  -->
+  <div class="navbar navbar-expand-lg bg-dark border-bottom py-3">
+      <div class="container-fluid px-4">
+
+      <!-- hangburger menu  -->
+      <button class="btn btn-light border-0 me-3" 
+      type="button" 
+      data-bs-toggle="offcanvas" 
+      data-bs-target="#browseMenu"
+      aria-controls="browseMenu"
+        aria-lable="Open navigation menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- logo -->
+      <a class="navbar-brand  fw-bold fs-3 me-4 " href="#">Cartzilla</a>
+
+      <!-- categories Dropdown -->
+      <div class="dropdown category-dropdown">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="categoryMenu"
+          data-bs-toggle="dropdown" aria-expanded="false">Categories</button>
+
+        <div class="dropdown-menu mega-menu p-4" aria-labelledby="categoryMenu">
+          <div class="row g-4">
+            <!-- column 1 -->
+            <div class="col-3">
+              <h5>Bakery &amp; bread</h5>
+              <a href="#">Shop all</a>
+              <a href="#">Bread</a>
+              <a href="#">Pastries</a>
+              <a href="#">Bakery cookies</a>
+              <a href="#">Cupcakes</a>
+              <a href="#">Buns &amp; rolla</a>
+              <h5 class="mt-4">Meat products</h5>
+              <a href="#">Shop all</a>
+              <a href="#">Fresh meat</a>
+              <a href="#">Processed meat</a>
+              <a href="#">Seafood</a>
+              <a href="#">Poultry products</a>
+              <a href="#">Prepared meat</a>
+            </div>
+            <!-- column 2 -->
+            <div class="col-3">
+              <h5>Vegetables</h5>
+              <a href="#">Shop all</a>
+              <a href="#">Leafy greens</a>
+              <a href="#">Root vegetables</a>
+              <a href="#">Allium vegetaables</a>
+              <a href="#">Peppers and tomatoes</a>
+              <a href="#">Cruciferous</a>
+              <a href="#">Seasonal squashes</a>
+              <a href="#">Beans, peas &amp; lentils</a>
+
+              <h5 class="mt-4">Sauces and ketchup</h5>
+              <a href="#">Shop all</a>
+              <a href="#">Tomato-based sauces</a>
+              <a href="#">Salad dressing</a>
+              <a href="#">Hot sauces</a>
+
+            </div>
+
+            <!-- column 3  -->
+            <div class="col-3">
+              <h5>Fresh fruits</h5>
+              <a href="#">Shoop all</a>
+              <a href="#">Citrus fruits</a>
+              <a href="#">Berries</a>
+              <a href="#">Tropical fruits</a>
+              <a href="#">Stone fruits</a>
+              <a href="#">Exotic fruits</a>
+              <a href="#">Melons</a>
+
+              <h5 class="mt-4">Italian dinner</h5>
+              <a href="#">Shop all</a>
+              <a href="#">Italian cheese</a>
+              <a href="#">Italian meats</a>
+              <a href="#">Desserts &amp; beverages</a>
+            </div>
+
+
+
+
+
+            <!-- column 4 -->
+            <div class="col-3">
+              <h5>Beverages</h5>
+              <a href="#">Shop all</a>
+              <a href="#">Soft drinks</a>
+              <a href="#">Juices</a>
+              <a href="#">Sports &amp; energy drinks</a>
+              <a href="#">Tea and coffee</a>
+              <a href="#">Alcoholic beverages</a>
+
+              <h5 class="mt-4">Dairy &amp; eggs</h5>
+              <a href="#">Shop all</a>
+              <a href="#">Cheese</a>
+              <a href="#">Milk &amp; yogurt</a>
+              <a href="#">Eggs</a>
+              <a href="#">Butter &amp; margarine</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Search Bar -->
+      <form class="d-flex flex-grow-1 mx-lg-3 my-3 my-lg-0" role="serach" id="searchForm">
+        <input class="form-control" type="search" placeholder="search groceries..." aria-label="Search"
+          id="searchInput">
+        <button class="btn btn-success ms-2" type="submit">Search</button>
+      </form>
+
+      <!-- dilivery Address -->
+      <button class="btn delivery-trigger" type="button" data-bs-toggle="offcanvas" data-bs-target="#deliveryPanel"  aria-controls="deliveryPanel">
+        <small class="d-block text-muted">Deliver to</small>
+        <span class="fw-semibold" id="selectedAddress"> Set address</span>
+      </button>
+
+      <!-- Theme toggle -->
+      <button class="btn btn-light fs-5 mx-1" id="themeToggle" type="button" aria-lable="Toggle theme"><svg
+          xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-half"
+          viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 0 8 1zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16" />
+        </svg></button>
+
+      <!-- User Icon -->
+      <a href="#" class="btn btn-light fs-5 mx-1" aria-lable="User account"><svg xmlns="http://www.w3.org/2000/svg"
+          width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+          <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+        </svg></a>
+
+      <!-- Shopping Cart -->
+      <a href="#" class="btn btn-light fs-5 mx-1" aria-label="Shopping cart"><svg xmlns="http://www.w3.org/2000/svg"
+          width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+          <path
+            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+        </svg></a>
+    </div>
+    
+  
+  </div>
+
+  <!-- browse Cartzilla Sidebar -->
+
+  <div class="offcanvas offcanvas-start cartzilla-sidebar" 
+        tabindex="-1"
+        id="browseMenu"
+        aria-labelledby="browseMenuLabel">
+
+        <!-- Sidebar Header -->
+         <div class="offcanvas-header">
+            <h2 class="offcanvas-title" id="browseMenuLabel">Browse Cartzilla</h2>
+
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                    aria-label="Close"  ></button>
+
+                    <!-- Sidebar Body -->
+                     <div class="offcanvas-body">
+                      <!-- Home -->
+                       <div class="menu-item">
+                        <button class="menu-heading" type="button" data-bs-toggle="collapse" data-bs-target="#homeSubmenu" aria-expanded="false">Home<span class="arrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+</svg></span></button>
+
+<div class="collapse submenu" id="homeSubmenu">
+    <a href="index.html">Home Grocery</a>
+    <a href="#">Home Fashion</a>
+    <a href="#">Home Electronics</a>
+</div>
+
+<!-- shop -->
+<div class="menu-item">
+    <button class="menu-heading" type="button" data-bs-toggle="collapse" data-bs-target="#shopSubmenu" aria-expanded="false">Shop
+      <span class="arrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+</svg></span>
+    </button>
+
+    <div class="collapse submenu" id="shopSubmenu">
+      <a href="#">Shop Categories</a>
+      <a href="#">Shop Products</a>
+      <a href="#">Shopping Cart</a>
+      <a href="#">Checkout</a>
+    </div>
+</div>
+
+<!-- Account  -->
+
+<div class="menu-item">
+  <button class="menu-heading" type="button" data-bs-toggle="collapse" data-bs-toggle="collapse" data-bs-target="#accountSubmenu" aria-expanded="false">Account<span class="arrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+</svg></span></button>
+
+<div class="collapse submenu" id="accountSubmenu">
+  <a href="#">Sign In</a>
+  <a href="#">Create Account</a>
+  <a href="#">My Orders</a>
+  <a href="#">Profile Settings</a>
+</div>
+</div>
+
+<!-- pages -->
+
+<div class="menu-item">
+  <button class="menu-heading" type="button" data-bs-toggle="collapse" data-bs-target="#pagesSubmenu" aria-expanded="false">Pages<span class="arrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+</svg></span></button>
+
+<div class="collapse sunmenu" id="pagesSubmenu">
+<a href="#">About Us</a>
+<a href="#">Contact</a>
+<a href="#">FAQ</a>
+<a href="404 Page"></a>  
+</div>
+</div>
+
+<!-- Docs -->
+ <div class="menu-item">
+  <a href="#" class="menu-link">Docs</a>
+ </div>
+
+ <!-- Components -->
+  <div class="menu-item">
+    <a href="#" class="menu-link">Components</a>
+  </div>
+
+                       </div>
+                     </div>
+         </div>
+      
+      </div>
+
+<!-- delivery ooptions sidebar -->
+  <div class="offcanvas offcanvas-end delivery-panel" tabindex="-1" id="deliveryPanel" aria-labelledby="deliveryTitle">
+
+  <!-- Header -->
+
+  <div class="offcanvas-header delivery-header">
+    <h2 class="offcanvas-title" id="deliveryTitle">
+      Delivery options
+    </h2>
+
+    <button type="button"  class="btn-close btn-close-white"  data-bs-dismiss="offcanvas" aria-label="close">
+    </button>
+
+
+  </div>
+
+  <div class="offcanvas-body delivery-body">
+      <!-- Delivery and pickup Tabs -->
+       <div class="delivery-tabs">
+        <button type="button" class="delivery-tab active" data-mode="delivery"><span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-heart" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0M14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1M8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132"/>
+</svg></span>Delivery</button>
+
+<button type="button" class="delivery-tab" data-mode="pickup"><span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box" viewBox="0 0 16 16">
+  <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z"/>
+</svg></span>Pickup</button>
+       </div>
+
+      <!-- Saved addresses -->
+       <div id="deliveryAddressList">
+        <label class="address-option selected">
+          <input type="radio" name="deliveryAddress" value="567 Cherry Lane Apt B12 Sacramento, 95829" checked>
+
+          <span class="address-text">567 Cherry Lane Apt B12 Saccramento, 95829</span>
+        </label>
+
+        <label class="address-option">
+          <input type="radio" name="deliveryAddress" value="1901 Thornridge Cir. Shiloh, Hawaii, 81063">
+
+          <span class="address-text">1901 Thornridge Cir. Shiloh, Hawaii, 81063</span>
+
+          <button type="button" class="delete-address" aria-label="Delete address"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+</svg></button>
+
+
+        </label>
+
+        <label class="address-option">
+          <input type="radio" name="deliveryAddress" value="3517 w. Gray St. Utica, Pennsylvania, 57867">
+
+          <span class="address-text">3517 W. Gray St. Utica, Pennsylvania, 57867</span>
+
+          <button type="button" class="delete-address" aria-label="Delete address"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+</svg></button>
+        </label>
+       </div>
+
+       <!-- Add address -->
+        <button type="button" class="add-address-btn" id="addAddressBtn">Add delivery address <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+</svg></span></button>
+
+
+    <!-- New Address Form  -->
+     <form id="newAddressForm" class="new-address-form d-none">
+      <label for="addressInput" class="form-label">Enter delivery address</label>
+
+      <input type="text" class="form-control" id="addressInput" placeholder="Enter your full address" required>
+
+      <div class="d-flex gap-2 mt-3">
+        <button type="submit" class="btn btn-danger">Save address</button>
+
+        <button type="button" class="btn btn-outline-secondary" id="cancelAddressBtn">Cancel</button>
+      </div>
+     </form>
+
+     <!-- Pickup Message -->
+      <div id="pickupMessage" class="d-none">
+        <p class="pickup-message">Pickup selected. You can choose a pickup location when this feature is configured.</p>
+      </div>
+
+      <!-- Confirm Button -->
+
+      <button type="button" class="confirm-address-btn" id="confirmAddressBtn">Confirm address</button>
+       </div>
+  </div>
+ </div>
+
+
+  <!-- Promotional category strip at the bottom of the page -->
+  <nav class="category-promotions" aria-label="Promotions and featured categories">
+    <div class="category-promotions-list">
+      <a class="promotion-link" href="#weekly-sale">
+        <span class="promotion-icon"><img src="assets/img/weekly_sale.png" alt=""></span>
+        <span>Weekly sale</span>
+      </a>
+      <a class="promotion-link" href="#vegetables">
+        <span class="promotion-icon"><img src="assets/img/vegetables.png" alt=""></span>
+        <span>Vegetables</span>
+      </a>
+      <a class="promotion-link" href="#easter">
+        <span class="promotion-icon"><img src="assets/img/easter_egg.png" alt=""></span>
+        <span>Easter is coming</span>
+      </a>
+      <a class="promotion-link" href="#poultry-meat">
+        <span class="promotion-icon"><img src="assets/img/poultry_meat.png" alt=""></span>
+        <span>Poultry meat</span>
+      </a>
+      <a class="promotion-link" href="#fresh-fruits">
+        <span class="promotion-icon"><img src="assets/img/fresh_fruits.png" alt=""></span>
+        <span>Fresh fruits</span>
+      </a>
+      <a class="promotion-link" href="#st-patricks-day">
+        <span class="promotion-icon"><img src="assets/img/st_patricks_day.png" alt=""></span>
+        <span>St. Patrick's day</span>
+      </a>
+      <a class="promotion-link" href="#exotic-fruit">
+        <span class="promotion-icon"><img src="assets/img/exotic_fruit.png" alt=""></span>
+        <span>Exotic fruit</span>
+      </a>
+    </div>
+  </nav>
+
+
+  <!-- Hero carousel -->
+  <section id="drinkHeroCarousel" class="carousel slide carousel-fade hero-carousel"
+    data-bs-ride="carousel" data-bs-interval="2000" data-bs-pause="hover" aria-label="Featured summer drinks">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#drinkHeroCarousel" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Kiwi drink slide"></button>
+      <button type="button" data-bs-target="#drinkHeroCarousel" data-bs-slide-to="1"
+        aria-label="Mango drink slide"></button>
+      <button type="button" data-bs-target="#drinkHeroCarousel" data-bs-slide-to="2"
+        aria-label="Berry drink slide"></button>
+    </div>
+
+    <div class="carousel-inner">
+      <article class="carousel-item active hero-slide hero-slide-kiwi">
+        <div class="hero-copy">
+          <p class="hero-eyebrow"><span aria-hidden="true">🥝</span> Only natural ingredients</p>
+          <h1>Enjoy refreshing<br>summer drink</h1>
+          <a class="hero-shop-button" href="#fresh-fruits">Shop now</a>
+        </div>
+        <span class="hero-natural-seal">100%<br><small>NATURAL</small></span>
+        <img class="hero-product-image" src="assets/img/hero-kiwi-drink.png" alt="Kiwi juice with fresh kiwi, lime and mint">
+      </article>
+
+      <article class="carousel-item hero-slide hero-slide-mango">
+        <div class="hero-copy">
+          <p class="hero-eyebrow"><span aria-hidden="true">🥭</span> Sweet sunshine in every sip</p>
+          <h1>A little taste<br>of summer</h1>
+          <a class="hero-shop-button" href="#fresh-fruits">Shop now</a>
+        </div>
+        <span class="hero-natural-seal">100%<br><small>NATURAL</small></span>
+        <img class="hero-product-image" src="assets/img/hero-orange-mango.png" alt="Orange mango juice with fresh citrus and mango">
+      </article>
+
+      <article class="carousel-item hero-slide hero-slide-berry">
+        <div class="hero-copy">
+          <p class="hero-eyebrow"><span aria-hidden="true">🍓</span> Made for bright summer days</p>
+          <h1>Refresh your day<br>with real berries</h1>
+          <a class="hero-shop-button" href="#fresh-fruits">Shop now</a>
+        </div>
+        <span class="hero-natural-seal">100%<br><small>NATURAL</small></span>
+        <img class="hero-product-image" src="assets/img/hero-berry-drink.png" alt="Strawberry raspberry juice with fresh berries and mint">
+      </article>
+    </div>
+  </section>
+
+  <!-- Featured promotion cards -->
+  <section class="featured-promotions" aria-label="Featured product promotions">
+    <article class="featured-promo-card promo-fish">
+      <div class="featured-promo-copy">
+        <p class="promo-product-count">124 products</p>
+        <h2>Only fresh fish to your table</h2>
+        <a href="#fresh-fish" class="promo-shop-link">Shop now <span aria-hidden="true">›</span></a>
+      </div>
+      <img src="assets/img/promo-salmon.png" alt="Fresh salmon fillets with rosemary and lemon">
+    </article>
+
+    <article class="featured-promo-card promo-easter">
+      <div class="featured-promo-copy">
+        <p class="promo-product-count">97 products</p>
+        <h2>Products for Easter table</h2>
+        <a href="#easter" class="promo-shop-link">Shop now <span aria-hidden="true">›</span></a>
+      </div>
+      <img src="assets/img/promo-easter-bread.png" alt="Iced Easter bread with colorful sprinkles">
+    </article>
+
+    <article class="featured-promo-card promo-berries">
+      <div class="featured-promo-copy">
+        <p class="promo-product-count">28 products</p>
+        <h2>Berries from the garden</h2>
+        <a href="#berries" class="promo-shop-link">Shop now <span aria-hidden="true">›</span></a>
+      </div>
+      <img src="assets/img/promo-blueberries.png" alt="Fresh blueberries with green leaves">
+    </article>
+  </section>
+
+  <!-- Categories and popular products -->
+  <section class="catalog-section" aria-label="Categories and popular products">
+    <aside class="catalog-categories">
+      <h2 class="catalog-heading">Categories</h2>
+      <ul class="category-list">
+        <li><a href="#bakery"><span class="category-icon"><img src="assets/img/easter_egg.png" alt=""></span><span><strong>Bakery &amp; bread</strong><small>230 products</small></span></a></li>
+        <li><a href="#vegetables"><span class="category-icon"><img src="assets/img/vegetables.png" alt=""></span><span><strong>Vegetables</strong><small>180 products</small></span></a></li>
+        <li><a href="#fresh-fruits"><span class="category-icon"><img src="assets/img/fresh_fruits.png" alt=""></span><span><strong>Fresh fruits</strong><small>205 products</small></span></a></li>
+        <li><a href="#italian-dinner"><span class="category-icon"><img src="assets/img/exotic_fruit.png" alt=""></span><span><strong>Italian dinner</strong><small>309 products</small></span></a></li>
+        <li><a href="#beverages"><span class="category-icon"><img src="assets/img/st_patricks_day.png" alt=""></span><span><strong>Beverages</strong><small>372 products</small></span></a></li>
+        <li><a href="#meat-products"><span class="category-icon"><img src="assets/img/poultry_meat.png" alt=""></span><span><strong>Meat products</strong><small>124 products</small></span></a></li>
+        <li><a href="#sauces"><span class="category-icon"><img src="assets/img/weekly_sale.png" alt=""></span><span><strong>Sauces and ketchup</strong><small>219 products</small></span></a></li>
+        <li><a href="#dairy-eggs"><span class="category-icon"><img src="assets/img/easter_egg.png" alt=""></span><span><strong>Dairy and eggs</strong><small>146 products</small></span></a></li>
+      </ul>
+    </aside>
+
+    <div class="popular-products">
+      <div class="popular-products-header">
+        <h2 class="catalog-heading">Popular products</h2>
+        <a href="#all-products" class="view-all-link">View all <span aria-hidden="true">›</span></a>
+      </div>
+
+      <div class="product">
+        
+      <!-- product list  -->
+
+        <div class="product-grid"  id="products">
+          <p id="noProducts" class="text-center mt-4 d-none">No products found.</p>
+        </div>
+<!-- ------------------------------------------------------------ -->
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter and site footer -->
+  <footer class="site-footer">
+    <section class="newsletter-section" aria-labelledby="newsletterTitle">
+      <h2 id="newsletterTitle">Stay in touch with us</h2>
+      <p>Receive the latest updates about our products &amp; promotions</p>
+      <form class="newsletter-form">
+        <label class="visually-hidden" for="newsletterEmail">Your email</label>
+        <input id="newsletterEmail" type="email" placeholder="Your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="#top" class="footer-logo">Cartzilla</a>
+        <p>With a wide selection of fresh produce, pantry staples, and household essentials, we've got everything you need just a click away.</p>
+        <div class="footer-socials" aria-label="Social media links">
+          <a href="#instagram" aria-label="Instagram">◎</a>
+          <a href="#facebook" aria-label="Facebook">f</a>
+          <a href="#telegram" aria-label="Telegram">➤</a>
+          <a href="#whatsapp" aria-label="WhatsApp">◔</a>
+        </div>
+      </div>
+
+      <nav class="footer-links" aria-label="Categories">
+        <h2>Categories</h2>
+        <a href="#weekly-sale">Weekly sale</a>
+        <a href="#special-price">Special price</a>
+        <a href="#easter">Easter is coming</a>
+        <a href="#italian-dinner">Italian dinner</a>
+        <a href="#fresh-fruits">Fresh fruits</a>
+        <a href="#exotic-fruit">Exotic fruits</a>
+      </nav>
+
+      <nav class="footer-links" aria-label="Company">
+        <h2>Company</h2>
+        <a href="#blog">Blog and news</a>
+        <a href="#about">About us</a>
+        <a href="#faq">FAQ page</a>
+        <a href="#contact">Contact us</a>
+        <a href="#careers">Careers</a>
+      </nav>
+
+      <nav class="footer-links" aria-label="Account">
+        <h2>Account</h2>
+        <a href="#account">Your account</a>
+        <a href="#shipping-policies">Shipping &amp; policies</a>
+        <a href="#refunds">Refunds &amp; replacements</a>
+        <a href="#order-tracking">Order tracking</a>
+        <a href="#delivery-info">Delivery info</a>
+        <a href="#taxes-fees">Taxes &amp; fees</a>
+      </nav>
+
+      <nav class="footer-links" aria-label="Customer service">
+        <h2>Customer service</h2>
+        <a href="#payment-methods">Payment methods</a>
+        <a href="#money-back">Money back guarantee</a>
+        <a href="#refunds">Refunds &amp; replacements</a>
+        <a href="#order-tracking">Order tracking</a>
+        <a href="#delivery-info">Delivery info</a>
+        <a href="#shipping">Shipping</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Load one Bootstrap bundle only. Source maps are for developer tools, not scripts. -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+  <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>
